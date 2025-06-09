@@ -5,7 +5,7 @@ import (
 	steph "strings"
 )
 
-func main() {
+func pacotes() {
 	fmt.Println("Hello, World!")
 	fmt.Println(steph.Split("steph", ""))
 }
