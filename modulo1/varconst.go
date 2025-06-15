@@ -26,7 +26,6 @@ func main() {
 	fmt.Println(f)
 
 	const idadeLuan = 18
-
 	fmt.Println(idadeLuan)
 
 }
