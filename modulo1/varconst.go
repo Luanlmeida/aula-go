@@ -25,6 +25,7 @@ func main() {
 	f := "apple"
 	fmt.Println(f)
 
+	a
 	const idadeLuan = 18
 	fmt.Println(idadeLuan)
 
