@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	var conferenceName = "Go Conference"
-	const conferenceTickets = 50
-	var remainingTickets = 50
+	conferenceName := "Go Conference" // Criar variavel e cetar ela
+	const conferenceTickets int = 50
+	var remainingTickets uint = 50 // u = valor não pode ser negativo
 
 	fmt.Printf("Welcome to %v booking application\n", conferenceName)
 	fmt.Printf("We have total of %v tickets and %v are still avalible", conferenceTickets, remainingTickets)
