@@ -6,7 +6,7 @@ func main() {
 	conferenceName := "Go Conference" // Criar variavel e cetar ela
 	const conferenceTickets int = 50
 	var remainingTickets uint = 50 // u = valor não pode ser negativo
-	var bookings [50]string
+	var bookings []string
 
 	fmt.Printf("Welcome to %v booking application\n", conferenceName)
 	fmt.Printf("We have total of %v tickets and %v are still avalible", conferenceTickets, remainingTickets)
@@ -30,12 +30,12 @@ func main() {
 	fmt.Scan(&userTickets)
 
 	remainingTickets = remainingTickets - userTickets
-	bookings[50] = firstName + " " + lastName
+	bookings = append(bookings, firstName+" "+lastName)
 
-	fmt.Printf("The whole array: %v\n", bookings)
+	fmt.Printf("The whole slice: %v\n", bookings)
 	fmt.Printf("The first value: %v\n", bookings[0])
-	fmt.Printf("The type: %v\n", bookings)
-	fmt.Printf("The length: %v\n", len(bookings))
+	fmt.Printf("Slice type: %v\n", bookings)
+	fmt.Printf("Slice length: %v\n", len(bookings))
 
 	fmt.Printf("Thank you %v %v for booked %v tickets. you be receive a confirmation on email at %v\n", firstName, lastName, userTickets, email)
 	fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
