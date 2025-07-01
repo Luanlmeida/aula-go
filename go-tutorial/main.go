@@ -33,10 +33,14 @@ func main() {
 		fmt.Println("Enter number of tickets: ")
 		fmt.Scan(&userTickets)
 
-		remainingTickets = remainingTickets - userTickets
-		bookings = append(bookings, firstName+" "+lastName)
+		isValidName := len(firstName) >= 2 && len(lastName) >= 2
+		isValidEmail := strings.Contains(email, "@")
+		isValidTicketNumber := userTickets > 0 && userTickets <= remainingTickets
 
-		if userTickets <= remainingTickets {
+		if {
+			remainingTickets = remainingTickets - userTickets
+			bookings = append(bookings, firstName+" "+lastName)
+
 			fmt.Printf("Thank you %v %v for booked %v tickets. you be receive a confirmation on email at %v\n", firstName, lastName, userTickets, email)
 			fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
 
