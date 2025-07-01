@@ -36,6 +36,11 @@ func main() {
 		remainingTickets = remainingTickets - userTickets
 		bookings = append(bookings, firstName+" "+lastName)
 
+		if userTickets > remainingTickets {
+			fmt.Printf("We only have %v tickets remaining, so you can't book %v tickets \n", remainingTickets, userTickets)
+			break
+		}
+
 		fmt.Printf("Thank you %v %v for booked %v tickets. you be receive a confirmation on email at %v\n", firstName, lastName, userTickets, email)
 		fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
 
