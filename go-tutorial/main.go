@@ -70,3 +70,7 @@ func main() {
 
 	}
 }
+
+func greetUsers() {
+
+}
