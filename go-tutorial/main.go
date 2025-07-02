@@ -5,13 +5,15 @@ import (
 	"strings"
 )
 
-func main() {
-	conferenceName := "Go Conference" // Criar variavel e setar ela
-	const conferenceTickets int = 50
-	var remainingTickets uint = 50 // u = valor não pode ser negativo
-	bookings := []string{}
+var conferenceName string = "Go Conference" // Criar variavel e setar ela
+const conferenceTickets int = 50
 
-	greetUsers(conferenceName, conferenceTickets, remainingTickets)
+var remainingTickets uint = 50 // u = valor não pode ser negativo
+var bookings = []string{}
+
+func main() {
+
+	greetUsers()
 
 	for {
 
@@ -43,9 +45,9 @@ func main() {
 	}
 }
 
-func greetUsers(confName string, confTickets int, remainingTickets uint) {
-	fmt.Printf("Welcome to %v booking applications\n", confName)
-	fmt.Printf("We have total of %v tickets and %v are still avalible", confTickets, remainingTickets)
+func greetUsers() {
+	fmt.Printf("Welcome to %v booking applications\n", conferenceName)
+	fmt.Printf("We have total of %v tickets and %v are still avalible", conferenceTickets, remainingTickets)
 	fmt.Println("Get your tickets here to attend")
 }
 
