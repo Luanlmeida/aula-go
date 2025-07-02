@@ -23,7 +23,7 @@ func main() {
 
 		if isValidName && isValidEmail && isValidTicketNumber {
 
-			bookTicket(userTickets, bookings, firstName, lastName)
+			bookTicket(userTickets, firstName, lastName, email)
 
 			firstNames := getFirstNames()
 			fmt.Printf("The first names of bookings are: %v\n", firstNames)
@@ -89,7 +89,7 @@ func getUserInput() (string, string, string, uint) {
 	return firstName, lastName, email, userTickets
 }
 
-func bookTicket(userTickets uint, bookings []string, firstName string, lastName string) {
+func bookTicket(userTickets uint, firstName string, lastName string, email string) {
 	remainingTickets = remainingTickets - userTickets
 	bookings = append(bookings, firstName+" "+lastName)
 
