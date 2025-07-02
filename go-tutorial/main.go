@@ -67,7 +67,6 @@ func main() {
 				fmt.Println("Number of tickets you entered is invalid")
 			}
 		}
-
 	}
 }
 
