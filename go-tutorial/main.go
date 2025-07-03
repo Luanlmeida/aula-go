@@ -6,10 +6,9 @@ import (
 	"strings"
 )
 
-var conferenceName string = "Go Conference"
-
 const conferenceTickets int = 50
 
+var conferenceName string = "Go Conference"
 var remainingTickets uint = 50 // u = valor não pode ser negativo
 var bookings = []string{}
 
@@ -53,7 +52,7 @@ func greetUsers() {
 	fmt.Println("Get your tickets here to attend")
 }
 
-func getFirstNames() []string {
+func printFirstNames() []string {
 	firstNames := []string{}
 	for _, booking := range bookings {
 		var names = strings.Fields(booking)
