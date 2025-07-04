@@ -4,14 +4,13 @@ import (
 	"booking-app/helper"
 	"fmt"
 	"strconv"
-	"strings"
 )
 
 const conferenceTickets int = 50
 
 var conferenceName string = "Go Conference"
 var remainingTickets uint = 50 // u = valor não pode ser negativo
-var bookings = []string{}
+var bookings = make([]map[string]string, 0)
 
 func main() {
 
@@ -26,7 +25,7 @@ func main() {
 
 			bookTicket(userTickets, firstName, lastName, email)
 
-			firstNames := printFirstNames()
+			firstNames := getFirstNames()
 			fmt.Printf("The first names of bookings are: %v\n", firstNames)
 
 			if remainingTickets == 0 {
@@ -53,11 +52,10 @@ func greetUsers() {
 	fmt.Println("Get your tickets here to attend")
 }
 
-func printFirstNames() []string {
+func getFirstNames() []string {
 	firstNames := []string{}
 	for _, booking := range bookings {
-		var names = strings.Fields(booking)
-		firstNames = append(firstNames, names[0])
+		firstNames = append(firstNames, booking["firstName"])
 	}
 	return firstNames
 }
@@ -92,7 +90,7 @@ func bookTicket(userTickets uint, firstName string, lastName string, email strin
 	userData["email"] = email
 	userData["numberOfTickets"] = strconv.FormatUint(uint64(userTickets), 10)
 
-	bookings = append(bookings, firstName+" "+lastName)
+	bookings = append(bookings, userData)
 
 	fmt.Printf("Thank you %v %v for booked %v tickets. you be receive a confirmation on email at %v\n", firstName, lastName, userTickets, email)
 	fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
