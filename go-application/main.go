@@ -11,6 +11,13 @@ var conferenceName string = "Go Conference"
 var remainingTickets uint = 50 // u = valor não pode ser negativo
 var bookings = make([]map[string]string, 0)
 
+type UserData struct {
+	firstName      string
+	lastName       string
+	email          string
+	numerOfTickets uint
+}
+
 func main() {
 
 	greetUsers()
